@@ -3,7 +3,7 @@ import {Message} from "node-telegram-bot-api";
 const makeGptRequest = require('./features/getYandexGpt')
 const TelegramBot = require('node-telegram-bot-api')
 
-const API_KEY_BOT = '';
+const API_KEY_BOT = '6948871781:AAGTvDEw6XEE3WJc9tkHYhITvRU5TbSmmI0';
 const bot = new TelegramBot(API_KEY_BOT, {
     polling: true
 })
