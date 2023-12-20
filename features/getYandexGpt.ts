@@ -1,7 +1,7 @@
 const axios = require('axios')
 
 module.exports = async function makeGptRequest(prompt: string) {
-    const apiKey = 't1.9euelZrMkcmenImZz8vMkcedk8uaju3rnpWanZOQi5WKnM-Mm5jInJnJj5Hl8_czYHhT-e9GTVZ__d3z93MOdlP570ZNVn_9zef1656VmpiOkZrIx82ZipDOyZSXlZKJ7_zF656VmpiOkZrIx82ZipDOyZSXlZKJ.YjHqrk0uEwL4lkx4MFUwM2gKbuKJ4CQOzmjs8M-_wg1yMfuaEryTauSolF8Bg8GH5dSXYH5t-VrBx5td0ZXQAg'
+    const apiKey = 't1.9euelZrNj82ckJmeipqaip3MyJuazu3rnpWanZOQi5WKnM-Mm5jInJnJj5Hl8_dsHXRT-e8Mbjwd_t3z9yxMcVP57wxuPB3-zef1656VmsicjsuUl8yRlYmbyJWOkYuO7_zF656VmsicjsuUl8yRlYmbyJWOkYuO.jwOwoSZJegZbzDgv0nvCEz93VAyS5qJlX_x2G6Dvm3ABC0IBArSEb10ad_N6pYP3-J6dcZiGYQ-4M1lYKOylAw'
     const url = 'https://llm.api.cloud.yandex.net/foundationModels/v1/completion'
 
     const data = {
@@ -28,7 +28,7 @@ module.exports = async function makeGptRequest(prompt: string) {
         const response = await axios.post(url, data, { headers })
         return response.data.result.alternatives[0].message.text
     } catch (error) {
-        console.error('Ошибка при выполнении запроса к Yandex GPT API:', error)
+        console.error('Ошибка при выполнении запроса к Yandex GPT')
         throw error;
     }
 }
