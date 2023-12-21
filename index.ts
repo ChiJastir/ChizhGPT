@@ -24,7 +24,7 @@ bot.on('text', async (msg: Message) => {
                 message_id: msgWait.message_id
             })
         }).catch((error: any) => {
-            console.error(error)
+            // console.error(error)
         })
     }
 })
