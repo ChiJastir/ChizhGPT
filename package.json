@@ -5,6 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "ts-node index.ts",
+    "start-js": "node app.js",
     "dev": "nodemon index.ts"
   },
   "author": "",

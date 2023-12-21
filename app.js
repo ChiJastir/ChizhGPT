@@ -1,6 +1,4 @@
-import {Message} from "node-telegram-bot-api";
-
-const makeGptRequest = require('./features/getYandexGpt')
+const makeGptRequest = require('./features/getYandexGptJs')
 const TelegramBot = require('node-telegram-bot-api')
 
 const API_KEY_BOT = '6948871781:AAGTvDEw6XEE3WJc9tkHYhITvRU5TbSmmI0';
@@ -8,14 +6,14 @@ const bot = new TelegramBot(API_KEY_BOT, {
     polling: true
 })
 
-bot.on('text', async (msg: Message) => {
+bot.on('text', async (msg) => {
     if (msg.text === '/start') {
         await bot.sendMessage(msg.chat.id, 'Добро пожаловать) Этот бот базируется на YandexGPT. Для начала работы просто напиши свой запрос')
     }
     else {
         const msgWait = await bot.sendMessage(msg.chat.id, `Чиж думает...`);
 
-        makeGptRequest(msg.text ?? '').then((generatedText: string) => {
+        makeGptRequest(msg.text ?? '').then((generatedText) => {
             // bot.deleteMessage(msgWait.chat.id, msgWait.message_id);
             // bot.sendMessage(msg.chat.id, generatedText)
 
