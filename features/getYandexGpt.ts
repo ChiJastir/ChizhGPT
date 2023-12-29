@@ -1,10 +1,8 @@
 const axios = require('axios')
 
-module.exports = async function makeGptRequest(prompt: string) {
+module.exports = async function makeGptRequest(prompt: unknown) {
     const token = await axios.get('https://functions.yandexcloud.net/d4e9bou6oqqcvv9mpjch')
     const url = 'https://llm.api.cloud.yandex.net/foundationModels/v1/completion'
-
-    console.log(token.data.access_token)
 
     const data = {
         "modelUri": "gpt://b1g6qmudmdql1joi7u5j/yandexgpt-lite",
@@ -13,12 +11,7 @@ module.exports = async function makeGptRequest(prompt: string) {
             "temperature": 0.6,
             "maxTokens": "2000"
     },
-        "messages": [
-            {
-                "role": "user",
-                "text": prompt
-            },
-        ]
+        "messages": prompt
     }
 
     const headers = {
