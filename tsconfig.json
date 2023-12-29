@@ -15,7 +15,6 @@
     "noFallthroughCasesInSwitch": true,
 
     "moduleResolution": "node",
-    "types": ["reflect-metadata"],
     "esModuleInterop": true,
     "inlineSources": true,
 
